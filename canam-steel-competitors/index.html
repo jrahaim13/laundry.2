@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canam Steel Competitors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12161c;
+      --steel: #3a4654;
+      --slate: #5c6b7a;
+      --plate: #d8dee6;
+      --spark: #c9782a;
+      --fog: rgba(18, 22, 28, 0.08);
+      --paper: #eef1f4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(120deg, rgba(58, 70, 84, 0.12) 0%, transparent 40%),
+        linear-gradient(300deg, rgba(201, 120, 42, 0.1) 0%, transparent 35%),
+        repeating-linear-gradient(
+          -12deg,
+          transparent,
+          transparent 11px,
+          rgba(18, 22, 28, 0.025) 11px,
+          rgba(18, 22, 28, 0.025) 12px
+        ),
+        linear-gradient(180deg, #f4f6f8 0%, var(--paper) 55%, #e6ebf0 100%);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-content: end;
+      padding: clamp(1.75rem, 5vw, 4rem);
+      overflow: hidden;
+      animation: rise 0.85s ease-out both;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 70% at 70% 20%, rgba(58, 70, 84, 0.35), transparent 60%),
+        linear-gradient(165deg, #1a222c 0%, #2a3542 48%, #3d4a58 100%);
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(transparent 60%, rgba(18, 22, 28, 0.55)),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 48px,
+          rgba(255, 255, 255, 0.03) 48px,
+          rgba(255, 255, 255, 0.03) 49px
+        );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 40rem;
+      color: #f2f4f6;
+    }
+
+    .brand {
+      font-family: "Instrument Serif", serif;
+      font-size: clamp(3.25rem, 11vw, 6rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      animation: rise 0.9s 0.08s ease-out both;
+    }
+
+    .brand em {
+      font-style: italic;
+      color: #e8b07a;
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+      line-height: 1.5;
+      color: rgba(242, 244, 246, 0.82);
+      max-width: 28rem;
+      margin-bottom: 1.75rem;
+      animation: rise 0.9s 0.18s ease-out both;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.45rem;
+      border: none;
+      border-radius: 0.25rem;
+      background: var(--spark);
+      color: #1a1208;
+      font: inherit;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+      animation: rise 0.9s 0.28s ease-out both;
+    }
+
+    .cta:hover {
+      background: #d9892f;
+      transform: translateY(-2px);
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid #f0c48a;
+      outline-offset: 3px;
+    }
+
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 3rem) 4rem;
+    }
+
+    section {
+      margin-bottom: 3.25rem;
+      animation: rise 0.9s ease-out both;
+    }
+
+    section:nth-of-type(1) { animation-delay: 0.1s; }
+    section:nth-of-type(2) { animation-delay: 0.18s; }
+    section:nth-of-type(3) { animation-delay: 0.26s; }
+    section:nth-of-type(4) { animation-delay: 0.34s; }
+
+    h2 {
+      font-family: "Instrument Serif", serif;
+      font-size: clamp(1.85rem, 4vw, 2.35rem);
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.55rem;
+      line-height: 1.15;
+    }
+
+    .section-lede {
+      color: var(--slate);
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+      max-width: 34rem;
+    }
+
+    .note {
+      font-size: 0.95rem;
+      color: var(--steel);
+      line-height: 1.5;
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--fog);
+      border-bottom: 1px solid var(--fog);
+      margin-bottom: 1.75rem;
+    }
+
+    .competitor {
+      padding: 1.15rem 0;
+      border-bottom: 1px solid var(--fog);
+      animation: fade-in 0.55s ease both;
+    }
+
+    .competitor:nth-child(1) { animation-delay: 0.2s; }
+    .competitor:nth-child(2) { animation-delay: 0.28s; }
+    .competitor:nth-child(3) { animation-delay: 0.36s; }
+    .competitor:nth-child(4) { animation-delay: 0.44s; }
+    .competitor:nth-child(5) { animation-delay: 0.52s; }
+    .competitor:nth-child(6) { animation-delay: 0.6s; }
+
+    .competitor h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .competitor h3 a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .competitor h3 a:hover {
+      color: var(--spark);
+      border-bottom-color: var(--spark);
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--spark);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.45rem;
+    }
+
+    .competitor p {
+      color: var(--steel);
+      line-height: 1.55;
+      font-size: 0.98rem;
+    }
+
+    .regional {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .regional li {
+      list-style: none;
+      padding-left: 1rem;
+      border-left: 3px solid var(--plate);
+      color: var(--steel);
+      line-height: 1.5;
+    }
+
+    .regional strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    footer {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem) 3rem;
+      color: var(--slate);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateX(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="brand">Canam <em>Steel</em></p>
+      <p class="lede">Who competes with Canam on open-web joists, steel deck, and engineered building components across North America.</p>
+      <a class="cta" href="#competitors">See competitors</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Canam</h2>
+      <p class="section-lede">Canam Steel Corporation (CSC) designs and manufactures open-web steel joists and steel deck, with engineering and project support for commercial, industrial, institutional, and multi-residential work.</p>
+      <p class="note">Query note: “Canal Steel” most often maps to <strong>Canam Steel</strong> (cscsteelusa.com / Canam Group). There is also an obscure NY filing for Canal Steel, Inc., which is not a major joist/deck player.</p>
+    </section>
+
+    <section id="competitors">
+      <h2>Primary U.S. competitors</h2>
+      <p class="section-lede">These firms routinely show up on the same joist and deck packages as Canam.</p>
+
+      <div class="competitor">
+        <p class="meta">Largest · Nucor</p>
+        <h3><a href="https://vulcraft.com/" rel="noopener noreferrer" target="_blank">Vulcraft</a></h3>
+        <p>Nucor’s joist and deck division—North America’s scale leader for open-web joists, joist girders, steel deck, and grating. The competitor Canam meets most often on national bids.</p>
+      </div>
+
+      <div class="competitor">
+        <p class="meta">#2 after CMC exit · Steel Dynamics</p>
+        <h3><a href="https://www.newmill.com/" rel="noopener noreferrer" target="_blank">New Millennium Building Systems</a></h3>
+        <p>Steel Dynamics division making joists, metal deck, and related engineered products. Expanded by acquiring CMC’s joist and deck plants, putting it firmly in the top tier with Vulcraft and Canam.</p>
+      </div>
+
+      <div class="competitor">
+        <p class="meta">Regional national · EBSCO</p>
+        <h3><a href="https://valleyjoist.com/" rel="noopener noreferrer" target="_blank">Valley Joist + Deck</a></h3>
+        <p>Long-running joist and deck manufacturer (EBSCO Industries). Competes on engineered product systems where Canam also bids fabricators and GCs.</p>
+      </div>
+
+      <div class="competitor">
+        <p class="meta">Historical peer · CMC</p>
+        <h3>CMC Joists &amp; Deck</h3>
+        <p>Formerly a major U.S. producer. CMC exited joists and deck; New Millennium absorbed key plants. Still cited in older competitive maps alongside Canam and Vulcraft.</p>
+      </div>
+
+      <div class="competitor">
+        <p class="meta">SJI / SDI certified</p>
+        <h3><a href="https://altra-steel.com/" rel="noopener noreferrer" target="_blank">Altra</a></h3>
+        <p>Certified open-web joist manufacturer competing for specification-driven work in the same SJI/SDI ecosystem as Canam.</p>
+      </div>
+
+      <div class="competitor">
+        <p class="meta">Adjacent fabricators</p>
+        <h3>Structural steel peers</h3>
+        <p>On broader structural packages, Canam-adjacent names include Canatal Industries, Cives Steel, High Steel Structures, and Schuff / Quincy Joist lineage—more fabricator overlap than pure joist/deck rivals.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Canada &amp; regional rivals</h2>
+      <p class="section-lede">Outside the big three U.S. joist/deck names, Canam Group has faced regional specialists.</p>
+      <ul class="regional">
+        <li><strong>Vicwest</strong> — Canadian building products competitor historically cited vs. Canam.</li>
+        <li><strong>Samuel / Omega Joists</strong> — Western Canada joist competition.</li>
+        <li><strong>Delta Joists</strong> — Quebec regional joist competitor.</li>
+        <li><strong>MBS Steel</strong> — Ontario-level competition.</li>
+        <li><strong>ASC Steel Deck / Epic Metals</strong> — Regional deck alternatives on some packages.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How the field stacks up</h2>
+      <p class="section-lede">For joists and deck, think Vulcraft first, then New Millennium and Canam as the core national set, with Valley Joist and certified regionals filling local packages. Specifiers often compare EPDs and SJI/SDI credentials as much as price.</p>
+    </section>
+  </main>
+
+  <footer>
+    Snapshot for quick reference—not a market share study. Sources include Canam Group public profiles, SJI/SDI industry context, New Millennium expansion materials, and trade competitor directories.
+  </footer>
+</body>
+</html>
